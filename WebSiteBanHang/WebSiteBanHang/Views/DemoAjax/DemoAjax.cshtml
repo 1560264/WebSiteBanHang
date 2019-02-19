@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "DemoAjax";
+    Layout = "~/Views/Layout/HomeLayout.cshtml";
+}
+
+@Ajax.ActionLink("Load Ajax MVC", "LoadAjaxActionLink", new AjaxOptions { HttpMethod="GET",UpdateTargetId="KetQua",InsertionMode=InsertionMode.InsertAfter})
+
+@using (Ajax.BeginForm("LoadAjaxBeginForm", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "KetQua", InsertionMode = InsertionMode.InsertAfter }))
+{
+    <input name="txt1" />
+    <input type="submit" value="Submit" />
+}
+
+
+<div style="height:150px" id="KetQua">
+    Đây là kết quả <br />
+</div>
+
